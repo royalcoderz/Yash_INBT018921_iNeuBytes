@@ -1,0 +1,243 @@
+
+:root {
+    --primary: #2c3e50;
+    --secondary: #3498db;
+    --bg: #f4f7f6;
+    --white: #ffffff;
+    --text: #333333;
+    --border: #ddd;
+    --success: #2ecc71;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+
+.search-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.search-section h1 {
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filters input, .filters select {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    width: 250px;
+    max-width: 100%;
+}
+
+
+.doctor-listings {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.doctor-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.doc-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.doc-avatar {
+    width: 60px;
+    height: 60px;
+    background-color: var(--secondary);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.doc-info h3 {
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.doc-info .dept {
+    background: #e1f0fa;
+    color: var(--secondary);
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+.doc-details p {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background-color: var(--secondary);
+    color: var(--white);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: auto;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+.w-100 { width: 100%; }
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+}
+
+.doctor-highlight {
+    color: var(--secondary);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.text-center { text-align: center; }
+
+.success-icon {
+    font-size: 4rem;
+    color: var(--success);
+    margin-bottom: 10px;
+}
+
+.summary-details {
+    background: var(--bg);
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+    text-align: left;
+    line-height: 1.8;
+}
+
+
+@media (max-width: 600px) {
+    .filters { flex-direction: column; align-items: center; }
+    .filters input, .filters select { width: 100%; }
+}
