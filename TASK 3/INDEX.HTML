@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Healthcare Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>MedAdmin</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="active" data-target="dashboard">Dashboard Home</a></li>
+            <li><a href="#" data-target="doctors">Doctor Management</a></li>
+            <li><a href="#" data-target="patients">Patient Management</a></li>
+            <li><a href="#" data-target="appointments">Appointments</a></li>
+            <li><a href="#" data-target="departments">Departments</a></li>
+        </ul>
+    </aside>
+
+    
+    <main class="main-content">
+        
+        <!-- Top Navigation Bar -->
+        <header class="top-nav">
+            <div class="menu-toggle" id="mobile-menu">☰</div>
+            <div class="user-profile">
+                <span>Admin User</span>
+                <div class="avatar">A</div>
+            </div>
+        </header>
+
+      
+        <section id="dashboard" class="view-section active-view">
+            <h1>Dashboard Overview</h1>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Doctors</h3>
+                    <p id="stat-doctors">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Patients</h3>
+                    <p id="stat-patients">156</p> <!-- Placeholder -->
+                </div>
+                <div class="stat-card">
+                    <h3>Total Appointments</h3>
+                    <p id="stat-appointments">42</p> <!-- Placeholder -->
+                </div>
+                <div class="stat-card">
+                    <h3>Departments</h3>
+                    <p id="stat-departments">8</p> <!-- Placeholder -->
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="doctors" class="view-section">
+            <h1>Doctor Management</h1>
+            
+            <div class="management-controls">
+                <input type="text" id="searchDoctor" placeholder="Search by name or department...">
+                <button class="btn-primary" id="openDoctorForm"> + Add Doctor</button>
+            </div>
+
+            
+            <div id="doctorFormContainer" class="form-container" style="display: none;">
+                <h3 id="formTitle">Add New Doctor</h3>
+                <form id="doctorForm">
+                    <input type="hidden" id="docId">
+                    <div class="form-group">
+                        <label>Doctor Name</label>
+                        <input type="text" id="docName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Department</label>
+                        <input type="text" id="docDept" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Experience (Years)</label>
+                        <input type="number" id="docExp" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Save Doctor</button>
+                        <button type="button" class="btn-secondary" id="cancelDoctorForm">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Experience</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="doctorTableBody">
+                        <!-- JS injects rows here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+      
+        <section id="patients" class="view-section"><h1>Patient Management</h1><p>Module coming soon...</p></section>
+        <section id="appointments" class="view-section"><h1>Appointment Management</h1><p>Module coming soon...</p></section>
+        <section id="departments" class="view-section"><h1>Department Management</h1><p>Module coming soon...</p></section>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
